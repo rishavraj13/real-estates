@@ -1,13 +1,36 @@
 import { Footer } from "@/components/(layouts)/Footer";
 import Navigation from "@/components/(layouts)/Navbar";
-import Hero from "@/components/Hero";
+import HeroSection from "@/components/Hero";
+import bg1 from "../../public/bg1.jpg";
 
-export default function Hero() {
-    return (
-      <main className="flex-1 container mx-auto px-4 py-6">
-        <Navigation />
-        <section className="my-8"><Hero /></section>
-        <Footer />
-      </main>
-    );
+export default function Page() {
+  return (
+    <main>
+      <section className="relative h-[80vh] flex items-center justify-center bg-gray-900 text-white">
+        <div>
+          <Navigation />
+        </div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-70"
+          style={{
+            backgroundImage: `url(${bg1.src})`,
+            width: "100%",
+            height: "100%",
+          }}
+        ></div>
+
+        <div className="relative h-full flex flex-col justify-end items-center text-center pb-16">
+          <h1 className="text-5xl font-bold mb-4">Find Your Dream Home</h1>
+          <p className="text-lg mb-6">
+            Explore the best properties tailored to your needs.
+          </p>
+        </div>
+      </section>
+      
+
+      <section>
+        <HeroSection/>
+      </section>
+    </main>
+  );
 }

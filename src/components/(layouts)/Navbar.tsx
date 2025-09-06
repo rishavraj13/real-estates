@@ -1,40 +1,62 @@
+"use client"; // if you're on Next.js App Router
+
 import Link from "next/link";
-import Image from "next/image";
-import { Sidebar } from "./Sidebar";
-import { MailMinus } from "lucide-react";
+import { useState, useEffect } from "react";
 import MainIcon from "../Icons/MainIcon";
-// import MainIcon from "../Icons/MainIcon";
+import { Sidebar } from "./Sidebar";
 
 export default function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // change after 50px scroll
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="">
-      <nav className=" w-full min-h-16 shadow-2xl bg-white">
+    <>
+      <nav
+        className={`w-full h-16 fixed top-0 left-0 z-50 transition-colors duration-300 
+          ${scrolled ? "bg-black text-white" : "bg-transparent text-black"}
+        `}
+      >
         <div className="flex justify-between items-center h-full px-8 w-full 2xl:px-16">
+          {/* Logo */}
           <Link href="/">
             <MainIcon />
           </Link>
-          <div className="text-xl  ">
-            <ul className="gap gap-6 uppercase hidden sm:flex">
-              <div className=" hover:text-red-400">
-                <Link href="/Home">Home</Link>
-              </div>
-              <div className="hover:text-red-400">
-                <Link href="/About">About</Link>
-              </div>
-              <div className="hover:text-red-400">
-                <Link href="/Services">Services</Link>
-              </div>
 
-              <div className="hover:text-red-400">
-                <Link href="/Contact Us">Contact us</Link>
-              </div>
+          {/* Desktop Links */}
+          <div className="text-lg">
+            <ul className="flex gap-6 uppercase hidden sm:flex">
+              <li className="hover:text-red-400">
+                <Link href="/home">Home</Link>
+              </li>
+              <li className="hover:text-red-400">
+                <Link href="/about">About</Link>
+              </li>
+              <li className="hover:text-red-400">
+                <Link href="/services">Services</Link>
+              </li>
+              <li className="hover:text-red-400">
+                <Link href="/contact-us">Contact Us</Link>
+              </li>
             </ul>
+          </div>
+
+          {/* Sidebar toggle for mobile */}
+          <div className="sm:hidden">
+            <Sidebar />
           </div>
         </div>
       </nav>
-      <div className="flex ">
-        <Sidebar />
-      </div>
-    </div>
+
+      {/* Spacer so content isn’t hidden */}
+      <div className="h-16" />
+    </>
   );
 }
