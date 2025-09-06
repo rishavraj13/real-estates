@@ -7,7 +7,7 @@ export function Sidebar() {
 
   return (
     <>
-      <div className="top-2 right-4 sm:hidden fixed px-1">
+      <div className="top-2 right-4 sm:hidden fixed px-4">
         <div className="cursor-pointer" onClick={() => setOpen(true)}>
           <NavButton />
         </div>
