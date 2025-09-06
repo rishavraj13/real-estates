@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../public/Logo.png";
+import { NavButton } from "./Icons/NavButton";
+import { Sidebar } from "./ui/Sidebar";
 
 export default function Navigation() {
   return (
@@ -16,7 +18,7 @@ export default function Navigation() {
               className="cursor-pointer"
             />
           </Link>
-          <div className="text-xl ">
+          <div className="text-xl  ">
             <ul className="gap gap-6 uppercase hidden sm:flex">
               <Link href="/About">About</Link>
 
@@ -26,9 +28,14 @@ export default function Navigation() {
 
               <Link href="/Services">Services</Link>
             </ul>
+            
           </div>
         </div>
       </nav>
+      <div className="flex ">
+        <Sidebar />
+      </div>
     </div>
+   
   );
 }
