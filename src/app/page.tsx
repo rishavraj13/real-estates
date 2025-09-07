@@ -1,6 +1,5 @@
-import { Footer } from "@/components/(layouts)/Footer";
-import Navigation from "@/components/(layouts)/Navbar";
-import HeroSection from "@/components/Hero";
+import Navigation from "../components/(layouts)/Navbar";
+import HeroSection from "../components/Hero";
 import bg1 from "../../public/bg1.jpg";
 
 export default function Page() {

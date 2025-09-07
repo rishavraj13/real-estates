@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import MainIcon from "../Icons/MainIcon";
+import MainIcon from "../../../public/Icons/MainIcon";
 import { Sidebar } from "./Sidebar";
 import { Button } from "../(ui)/Button";
 

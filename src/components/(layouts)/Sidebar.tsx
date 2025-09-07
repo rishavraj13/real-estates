@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { NavButton } from "../Icons/NavButton";
+import { NavButton } from "../../../public/Icons/NavButton";
 
 export function Sidebar() {
   const [open, setOpen] = useState(false);
