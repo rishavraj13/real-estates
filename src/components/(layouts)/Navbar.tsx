@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import MainIcon from "../Icons/MainIcon";
 import { Sidebar } from "./Sidebar";
+import { Button } from "../(ui)/Button";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,6 +52,19 @@ export default function Navigation() {
           {/* Sidebar toggle for mobile */}
           <div className="sm:hidden">
             <Sidebar />
+          </div>
+          <div className="flex gap-3 align-middle justify-center">
+            <div>
+              <Button size="md" variant="primary">
+                Signup
+              </Button>
+            </div>
+
+            <div>
+              <Button size="md" variant="primary">
+                SignIn
+              </Button>
+            </div>
           </div>
         </div>
       </nav>

@@ -20,16 +20,17 @@ export default function Page() {
         ></div>
 
         <div className="relative h-full flex flex-col justify-end items-center text-center pb-16">
-          <h1 className="text-5xl font-bold mb-4">Find Your Dream Home</h1>
-          <p className="text-lg mb-6">
+          <h1 className="text-5xl font-bold mb-4 fadeInUp">
+            Find Your Dream Home
+          </h1>
+          <p className="text-lg mb-6 fadeInUp-delay">
             Explore the best properties tailored to your needs.
           </p>
         </div>
       </section>
-      
 
       <section>
-        <HeroSection/>
+        <HeroSection />
       </section>
     </main>
   );
